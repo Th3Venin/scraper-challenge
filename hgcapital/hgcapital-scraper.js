@@ -1,6 +1,7 @@
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 
+// auto scroll function to load all companies gradually
 async function autoScroll(page) {
   await page.evaluate(async () => {
     await new Promise((resolve) => {
@@ -21,6 +22,7 @@ async function autoScroll(page) {
 }
 
 (async () => {
+  // puppeteer implementation
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
@@ -29,6 +31,7 @@ async function autoScroll(page) {
 
   await autoScroll(page);
 
+  // get basic data (from the portfolio page) about the companies
   const companies = await page.evaluate(() => {
     const cards = Array.from(
       document.querySelectorAll(".index-style__CompanyCardMain-sc-97babbba-0")
@@ -52,6 +55,7 @@ async function autoScroll(page) {
     });
   });
 
+  // load dedicated company page for each company and extract additional relevant data
   for (let company of companies) {
     if (!company.link) continue;
 

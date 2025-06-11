@@ -1,10 +1,12 @@
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 
+// delay function for delaying scrape requests
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+// extract function for additional relevant data from the dedicated company pages
 async function extractCompanyDetails(browser, url) {
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: "domcontentloaded" });
@@ -87,16 +89,21 @@ async function extractCompanyDetails(browser, url) {
 }
 
 (async () => {
+  // puppeteer implementation
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
   await page.goto("https://www.inflexion.com/portfolio/", {
     waitUntil: "networkidle2",
   });
 
+  // bypass cookies modal
   try {
     await page.waitForSelector("#ccc-notify-accept", { timeout: 5000 });
     await page.click("#ccc-notify-accept");
-  } catch (e) {}
+  } catch (e) {
+    console.log(e)
+    console.log('Cookie bypass failed')
+  }
 
   let previousCount = 0;
   while (true) {
@@ -104,6 +111,8 @@ async function extractCompanyDetails(browser, url) {
       ".portfolio-card",
       (cards) => cards.length
     );
+
+    // click the Load More button to load all companies gradually
     const clicked = await page.evaluate(() => {
       const btn = Array.from(document.querySelectorAll("button")).find(
         (b) => b.innerText.trim().toLowerCase() === "load more"
@@ -114,7 +123,9 @@ async function extractCompanyDetails(browser, url) {
       }
       return false;
     });
+
     if (!clicked) break;
+
     await page.waitForFunction(
       (prev) => document.querySelectorAll(".portfolio-card").length > prev,
       {},
@@ -122,6 +133,7 @@ async function extractCompanyDetails(browser, url) {
     );
   }
 
+  // get basic data (from the portfolio page) about the companies
   const companies = await page.$$eval(".portfolio-card", (cards) =>
     cards.map((card) => ({
       title:
@@ -139,6 +151,7 @@ async function extractCompanyDetails(browser, url) {
     }))
   );
 
+  // load dedicated company page for each company and extract additional relevant data
   for (let [index, company] of companies.entries()) {
     try {
       console.log(
@@ -149,6 +162,8 @@ async function extractCompanyDetails(browser, url) {
 
       const pause = 1500 + Math.floor(Math.random() * 1000);
       console.log(`Waiting ${pause}ms before next request...`);
+
+      // delay to bypass rate limiter
       await delay(pause);
     } catch (err) {
       console.error(`Failed scraping ${company.title}: ${err.message}`);

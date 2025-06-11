@@ -2,11 +2,13 @@ const puppeteer = require("puppeteer");
 const fs = require("fs");
 
 (async () => {
+  // puppeteer implementation
   const browser = await puppeteer.launch({ headless: "new" });
   const page = await browser.newPage();
   const url = "https://redirongroup.com/investments/";
   await page.goto(url, { waitUntil: "networkidle2" });
 
+  // bypass cookies modal
   try {
     await page.waitForSelector("button.cky-btn-accept", { timeout: 5000 });
     await page.click("button.cky-btn-accept");
@@ -17,6 +19,7 @@ const fs = require("fs");
 
   await page.waitForSelector("script#__NEXT_DATA__");
 
+  // get basic data (from the investments page) about the companies
   const companies = await page.evaluate(() => {
     const scriptTag = document.querySelector("script#__NEXT_DATA__");
     if (!scriptTag) return [];
@@ -65,6 +68,7 @@ const fs = require("fs");
 
   const enriched = [];
 
+  // load dedicated company page for each company and extract additional relevant data
   for (const company of companies) {
     if (!company.detailPage) {
       enriched.push(company);
