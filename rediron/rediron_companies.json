@@ -1,0 +1,77 @@
+[
+  {
+    "name": "chiropractic",
+    "headquarters": "Scottsdale, AZ",
+    "investmentDate": "March 2024",
+    "website": "www.100percentchiropractic.com",
+    "image": "https://a.storyblok.com/f/276777/840x338/27085e33af/chiro-dark.png",
+    "description": "100% Chiropractic  is a family of full-service wellness clinics that offers chiropractic care, massage therapy, and a full line of nutritional supplements. 100% Chiropractic boasts a wide base of doctors, assistants, and therapists that provide customized patient care tailored to the individual's health goals.",
+    "detailPage": "https://redirongroup.com/investments/chiropractic/",
+    "status": "Active",
+    "team": [
+      "Ben Bisconti",
+      "Jason Klein",
+      "Spencer J."
+    ]
+  },
+  {
+    "name": "Charter Impact",
+    "headquarters": "Northridge, CA",
+    "investmentDate": "Sept 2024",
+    "website": "www.charterimpact.com",
+    "image": "https://a.storyblok.com/f/276777/840x215/8b7ab7ebf6/charter-impact-new.png",
+    "description": "Charter Impact  is a mission-driven business partner dedicated to empowering charter schools and nonprofits with professional, personalized financial management and operational support. The company’s primary service offering is business management services for charter schools. Charter Impact’s full scope of services includes accounting, budgeting, accounts payable and payroll processing, assistance with reviewing contracts, ad hoc financial analysis, support with vendor negotiations and facility financing, management of lender relationships, IT services, and student data services.",
+    "detailPage": "https://redirongroup.com/investments/charter-impact/",
+    "status": "Active",
+    "team": [
+      "Ben Bisconti",
+      "Jason Klein",
+      "Matt Marinaro"
+    ]
+  },
+  {
+    "name": "everline",
+    "headquarters": "Calgary, AB; Houston, TX",
+    "investmentDate": "Sept 2024",
+    "website": "www.everlinecoatings.com",
+    "image": "https://a.storyblok.com/f/276777/840x321/0799e9d5f5/everline-new-colored.png",
+    "description": "EverLine Coatings and Services  is a premier franchisor of line striping, pavement maintenance, specialty coatings, and other exterior facility services across North America. With a focus on quality, innovation, and customer satisfaction, EverLine has become a trusted partner for businesses, municipalities, and property managers seeking reliable and professional pavement maintenance solutions. EverLine’s services are designed to enhance safety, extend pavement life, and improve the overall appearance of properties.",
+    "detailPage": "https://redirongroup.com/investments/everline/",
+    "status": "Active",
+    "team": [
+      "Jason Klein",
+      "Ben Bisconti",
+      "Spencer J."
+    ]
+  },
+  {
+    "name": "graphite",
+    "headquarters": "New York, NY",
+    "investmentDate": "Dec 2022",
+    "website": "www.graphitefinancial.com",
+    "image": "https://a.storyblok.com/f/276777/1700x317/df03d1660a/graphite-new.png",
+    "description": "Graphite Financial  is a leading outsourced strategic finance and accounting partner for early-stage and growth-stage businesses. The team is composed of CFOs, accountants, investors and entrepreneurs who have helped hundreds of startups scale from seed through exit. Graphite goes far beyond bookkeeping, providing full accounting, financial modeling and FP&A capabilities, as well as tax and compliance services, to their clients. The Company offers a full finance department as a service at a fraction of the cost of hiring a team in-house. By leveraging top finance talent alongside a best-in-class scalable technology stack, Graphite delivers real-time reporting and actionable analytics to founders and operators focused on managing growth and scale. Graphite has been purpose-built to serve entrepreneurs and deliver excellence in finance and accounting to its partners.",
+    "detailPage": "https://redirongroup.com/investments/graphite/",
+    "status": "Active",
+    "team": [
+      "Ben Bisconti",
+      "Jason Klein",
+      "Matt Marinaro"
+    ]
+  },
+  {
+    "name": "hline",
+    "headquarters": "Syracuse, NY",
+    "investmentDate": "Sept 2023",
+    "website": "www.hiline.co",
+    "image": "https://a.storyblok.com/f/276777/840x253/ff62e85c38/hiline-dark.png",
+    "description": "Hiline  transforms small business finances, starting with core bookkeeping and evolving into a fully integrated finance operations system. By combining expert professionals, streamlined processes, and modern technology, Hiline simplifies cash flow management, drives better decision-making, and fuels growth—so founders and operators can focus on building great companies.",
+    "detailPage": "https://redirongroup.com/investments/hline/",
+    "status": "Active",
+    "team": [
+      "Ben Bisconti",
+      "Jason Klein",
+      "Matt Marinaro"
+    ]
+  }
+]
